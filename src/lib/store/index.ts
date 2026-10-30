@@ -1,4 +1,5 @@
 import { FinancialPolicy, Order, LedgerStats } from '@/types';
+import { getSeedOrders } from './seed';
 
 // Default financial policy
 export const DEFAULT_POLICY: FinancialPolicy = {
@@ -28,8 +29,14 @@ const globalForStore = globalThis as unknown as {
 };
 
 if (!globalForStore.__agentWalletStore) {
+  const initialMap = new Map<string, Order>();
+  // Pre-seed realistic transactions for immediate demo and audit visualization
+  for (const order of getSeedOrders()) {
+    initialMap.set(order.id, order);
+  }
+
   globalForStore.__agentWalletStore = {
-    orders: new Map<string, Order>(),
+    orders: initialMap,
     policy: { ...DEFAULT_POLICY },
   };
 }
