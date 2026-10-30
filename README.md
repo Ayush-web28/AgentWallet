@@ -136,9 +136,39 @@ To test live checkout on PayPal Sandbox:
 
 ---
 
-## 🚢 Render Deployment (Hackathon Sponsor)
+## 🚢 Deployment (Vercel & Render)
 
-AgentWallet is configured for one-click deployment on [Render](https://render.com):
+### Option A: Deploy on Vercel (Recommended — 1-Click Native Next.js)
+
+Since **AgentWallet** is built on Next.js 14 App Router, Vercel provides zero-configuration serverless hosting:
+
+1. Go to **[vercel.com](https://vercel.com)** and log in with your GitHub account.
+2. Click **"Add New..."** > **"Project"**.
+3. Import your repository: **`Ayush-web28/AgentWallet`**.
+4. Framework Preset will automatically detect **Next.js**.
+5. Under **Environment Variables**, add:
+   - `PAYPAL_CLIENT_ID` = `your_paypal_sandbox_client_id`
+   - `PAYPAL_CLIENT_SECRET` = `your_paypal_sandbox_client_secret`
+   - `PAYPAL_API_BASE` = `https://api-m.sandbox.paypal.com`
+   - `PAYPAL_WEBHOOK_ID` = `your_webhook_id`
+   - `GEMINI_API_KEY` = `your_gemini_api_key`
+   - `NEXT_PUBLIC_APP_URL` = `https://<your-project>.vercel.app` *(update after first deploy)*
+6. Click **Deploy**. Vercel will build and assign you a live HTTPS domain in under 60 seconds!
+
+#### Deploy via Vercel CLI:
+```bash
+# 1. Install or run Vercel CLI
+npx vercel
+
+# 2. Deploy to production
+npx vercel --prod
+```
+
+---
+
+### Option B: Deploy on Render
+
+AgentWallet also includes `render.yaml` for Render Web Services:
 
 1. Connect your GitHub repository `https://github.com/Ayush-web28/AgentWallet` to Render.
 2. Render automatically detects `render.yaml`.
