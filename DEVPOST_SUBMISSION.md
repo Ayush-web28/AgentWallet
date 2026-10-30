@@ -113,9 +113,9 @@ Where:
 ## 🔗 "Try It Out" Links
 
 - **GitHub Repository**: [https://github.com/Ayush-web28/AgentWallet](https://github.com/Ayush-web28/AgentWallet)
-- **Live Demo / Deployment**: [https://agentwallet-app.vercel.app](https://github.com/Ayush-web28/AgentWallet) *(Or your deployed Vercel domain)*
+- **Live Demo / Deployment**: [https://agent-wallet-rho.vercel.app/](https://agent-wallet-rho.vercel.app/)
 - **Demo Video Script**: [`DEMO_SCRIPT.md`](https://github.com/Ayush-web28/AgentWallet/blob/main/DEMO_SCRIPT.md)
-- **PayPal Healthcheck API**: `https://<your-domain>/api/paypal/health`
+- **PayPal Healthcheck API**: `https://agent-wallet-rho.vercel.app/api/paypal/health`
 
 ---
 
